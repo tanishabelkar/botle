@@ -1,4 +1,4 @@
-f = open('E:\discord-bot\commands\words_list.txt', 'r')
+f = open('E:\discord-bot\words_list.txt', 'r')
 freq = [[] for i in range(0,10)]
 
 def toString(x):
@@ -18,7 +18,7 @@ for word in f:
         freq[len(word)-1].append(word)
 
 for i in range (3,8):
-    file = open('E:\discord-bot\commands\words\\'+toString(i)+'.txt', 'w')
+    file = open('E:\discord-bot\words\\'+toString(i)+'.txt', 'w')
     file.write('{\n')
     for word in freq[i]:
         line=(' "{}": 1,\n ').format(word.strip())
