@@ -1,4 +1,4 @@
-# sha-bot
+# Bot-le : the wordle bot
 
 ## What it is?
 A discord bot that'll help users play the game of wordle. I'm still working on error handling but so far it works pretty well if you give the right commands. 
