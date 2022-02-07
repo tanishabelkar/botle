@@ -1,9 +1,6 @@
 const { Client, Intents, Interaction } = require('discord.js')
-const https = require('https')
 const { token } = require('./config.json')
-const { getAdvice } = require('./commands/advice')
-const { weatherOf } = require('./commands/weather')
-const wordle = require('./commands/wordle').default
+const wordle = require('./wordle.js')
 
 const client = new Client({
   intents: [
@@ -25,7 +22,7 @@ client.once('ready', () => {
 let a = 0
 
 client.on('message', msg => {
-  if (msg.author.bot || !msg.content.startsWith('*') || a > 6) return
+  if (msg.author.bot || !msg.content.startsWith('*')) return
   const commands = msg.content.split(' ')
   commands[0] = commands[0].substring(1)
   console.log(commands)
@@ -39,7 +36,7 @@ client.on('message', msg => {
   } else {
     if (wordle.checkEntry(commands[0])) {
       ++a
-      if (a >= 6) {
+      if (a >= wordle.game.attempts) {
         msg.channel.send(
           'Attempts exhausted. The word is- ' + wordle.game.target
         )

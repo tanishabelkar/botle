@@ -66,4 +66,4 @@ function move (word) {
   return res
 }
 
-export default {createGame, move, checkEntry, game}
+module.exports = {createGame, move, checkEntry, game}
