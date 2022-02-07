@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const {
   Client,
   Intents
@@ -5,6 +6,11 @@ const {
 
 const { token } = require('./config.json')
 const wordle = require('./commands/wordle')
+=======
+const { Client, Intents, Interaction } = require('discord.js')
+const { token } = require('./config.json')
+const wordle = require('./wordle.js')
+>>>>>>> master
 
 const client = new Client({
   intents: [
@@ -106,7 +112,10 @@ let moveEmbed = {
 
 client.on('message', msg => {
   if (msg.author.bot || !msg.content.startsWith('*')) return
+<<<<<<< HEAD
   msg.content.toLowerCase()
+=======
+>>>>>>> master
   const commands = msg.content.split(' ')
   commands[0] = commands[0].substring(1)
   console.log(commands)
@@ -131,7 +140,18 @@ client.on('message', msg => {
   //For guesses
   else {
     if (wordle.checkEntry(commands[0])) {
+<<<<<<< HEAD
       ++attempts
+=======
+      ++a
+      if (a >= wordle.game.attempts) {
+        msg.channel.send(
+          'Attempts exhausted. The word is- ' + wordle.game.target
+        )
+        a = 0
+        return
+      }
+>>>>>>> master
       const result = wordle.move(commands[0])
 
       //Winning Condition
