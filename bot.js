@@ -5,9 +5,6 @@ const {
 } = require('discord.js')
 
 const { token } = require('./config.json')
-const wordle = require('./commands/wordle')
-const { Client, Intents, Interaction } = require('discord.js')
-const { token } = require('./config.json')
 const wordle = require('./wordle.js')
 
 const client = new Client({
