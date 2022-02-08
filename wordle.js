@@ -66,8 +66,7 @@ function move (word) {
   return res
 }
 
-<<<<<<< HEAD:commands/wordle.js
+
 module.exports = { createGame, move, checkEntry, game }
-=======
-module.exports = {createGame, move, checkEntry, game}
->>>>>>> master:wordle.js
+
+
