@@ -39,8 +39,7 @@ function checkEntry (entry) {
 
 function move (word) {
   word = word.toLowerCase()
-  if(word===game.target)
-  return []
+  if (word === game.target) return []
   let wmap = mapWord(word),
     res = new Array(word.length)
 
@@ -57,13 +56,18 @@ function move (word) {
       })
     }
   })
-  
+
   for (let i = 0; i < res.length; ++i) {
     if (res[i] !== 1 && res[i] !== 0) {
       res[i] = -1
     }
   }
+
   return res
 }
 
-export default {createGame, move, checkEntry, game}
+<<<<<<< HEAD:commands/wordle.js
+module.exports = { createGame, move, checkEntry, game }
+=======
+module.exports = {createGame, move, checkEntry, game}
+>>>>>>> master:wordle.js
